@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@100..900&display=swap');
+
+:root {
+    --title-font: 'Bebas Neue', 'Times New Roman', sans-serif;
+    --content-font: 'Roboto Slab', serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--content-font);
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.background {
+    flex: 0.4;
+    background: url('./imgs/bg.avif') no-repeat center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.title {
+    font-family: var(--title-font);
+    font-size: 6rem;
+    color: white;
+    background-color: rgba(34, 33, 33, 0.4);
+}
+
+.credits {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    color: whitesmoke;
+    font-size: 1rem;
+}
+
+.credits > a {
+    color: inherit;
+}
+
+.content {
+    flex: 0.6;
+    font-family: var(--content-font);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    /* padding: 1rem 3rem; */
+}
+
+.info {
+    padding: 1rem 3rem;
+    background-color: #f7e6e2;
+    box-shadow: 3px 3px #888888;
+}
+
+.info > h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}
+
+fieldset {
+    border: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    column-gap: 7.5rem;
+    row-gap: 1rem;
+}
+
+fieldset > div {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 250px;
+    position: relative;
+}
+
+fieldset > div:last-child {
+    margin-right: 0;
+}
+
+fieldset > div > p {
+    position: absolute;
+    bottom: -1rem;
+    visibility: hidden;
+    font-size: 0.75rem;
+    color: red;
+    opacity: 0.75;
+}
+
+input:user-invalid ~ p {
+    visibility: visible;
+}
+
+label {
+    text-transform: uppercase;
+}
+
+input {
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:user-valid {
+    border: 3px solid green;
+}
+
+input:user-invalid {
+    border: 3px solid red;
+}
+
+input:focus {
+    outline: none;
+}
+
+.create {
+    margin-left: 3rem;
+    margin-top: 2rem;
+    padding: 16px 40px;
+    border-radius: 10px;
+    border: 0px;
+    font-size: 1.25em;
+    color: white;
+    font-weight: 600;
+    background-color: #596d48;
+}
+
+.create:hover {
+    cursor: pointer;
+}
