@@ -7,8 +7,8 @@
 }
 
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: var(--content-font);
 }
@@ -82,17 +82,20 @@ form {
 fieldset {
     border: 0;
     display: flex;
+    justify-content: space-between;
+    width: 90%;
     flex-wrap: wrap;
-    flex-grow: 1;
-    column-gap: 7.5rem;
-    row-gap: 1rem;
 }
 
 fieldset > div {
     display: flex;
     flex-direction: column;
-    flex-basis: 250px;
+    width: 44%;
     position: relative;
+}
+
+div > input {
+    width: 100%;
 }
 
 fieldset > div:last-child {
@@ -117,7 +120,7 @@ label {
 }
 
 input {
-    padding: 5px 10px;
+    padding: 0.4rem 0.75rem;
     box-sizing: border-box;
     border-radius: 5px;
     font-size: 1rem;
@@ -144,10 +147,10 @@ input:focus {
 .create {
     margin-left: 3rem;
     margin-top: 2rem;
-    padding: 16px 40px;
+    padding: 1rem 2.5rem;
     border-radius: 10px;
     border: 0px;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     color: white;
     font-weight: 600;
     background-color: #596d48;
@@ -155,4 +158,46 @@ input:focus {
 
 .create:hover {
     cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .background {
+        min-height: 80vh;
+    }
+
+    .content {
+        align-items: center;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        justify-content: center;
+    }
+
+    fieldset {
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        row-gap: 1rem;
+    }
+
+    fieldset > div {
+        width: 100%;
+    }
+
+    .create {
+        margin: 0.5rem;
+        margin-top: 3rem;
+    }
 }
